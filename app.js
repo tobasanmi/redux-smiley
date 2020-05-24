@@ -9,7 +9,11 @@ function mood(state={}, action){
          return {...action.payload};
         // return newState;
      case 'HAPPY':
-         return state + action.payload;
+         {
+             const newState = {...state, ...action.payload}
+         return console.log('hey');
+         ;
+         }
          //return newState;
     case 'ANGRY':
         return state + action.payload;
@@ -21,7 +25,7 @@ function mood(state={}, action){
  }
 };
 
-const store = Redux.createStore(mood);
+let store = Redux.createStore(mood);
 
 function sad(){
     return{
@@ -31,8 +35,6 @@ function sad(){
 };
 
 function happy(){
-    console.log('happy');
-    
     return{
         type : 'HAPPY',
         payload: '&&*_--_*&&'
@@ -55,17 +57,21 @@ function angry(){
     return faceConfused;
 };
 
-//document.getElementById('happy').addEventListener('click', store.dispatch(happy()));
+
 document.getElementById('confused').addEventListener('click', store.dispatch(confused()));
 document.getElementById('sad').addEventListener('click', store.dispatch(sad()));
 document.getElementById('angry').addEventListener('click', store.dispatch(angry()));
+document.querySelector('#happy').addEventListener('click', store.dispatch(happy('&&*_--_*&&')));
 // function faceConfused(){
 //     document.getElementById("face").innerHTML = store.getState();
 //   }
+store.dispatch(happy('&&*_--_*&&'))
 
 store.subscribe(() => {
-    console.log(store.getState());
-      result.innerHTML = (store.getState());
+    console.log('Called');
+    
+    // console.log(store.getState());
+    //   result.innerHTML = (store.getState());
     })
 
 

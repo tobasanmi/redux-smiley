@@ -17,24 +17,9 @@
       
       </div>
       <script src= "https://unpkg.com/redux@latest/dist/redux.min.js"></script>
-      <script src = 'app.js'></script>  
+      <script src = 'app1.js'></script>  
 </body>
 </html>
 
 
 
-const store = Redux.createStore(reducer)
-document.getElementById('happy')
-  .addEventListener('click', () => {
-   return store.dispatch(setHappy("&#128512"))
-  })
-
-
-  store.subscribe(() => {
-console.log(store.getState().mood);
-  result.innerHTML = (store.getState().mood);
-})
-store.subscribe(() => {
-console.log(store.getState().mood);
-  result.innerHTML = (store.getState().mood);
-})
