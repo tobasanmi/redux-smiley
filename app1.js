@@ -57,12 +57,9 @@ document.getElementById('angry').addEventListener('click', ()=>{
 });
 
 
-
 store.subscribe(() => {
+    result.innerHTML = (store.getState())
+  });
+
   
-    result.innerHTML = (store.getState());
-<<<<<<< HEAD
-  })
-=======
-  })
->>>>>>> 34870ec947c921630596e11166b918cf4a401e54
+    
