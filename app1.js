@@ -19,26 +19,26 @@ function mood(state="", action){
   function sad(){
     return{
         type : 'SAD',
-        payload: '__--__'
+        payload: "&#128547"
     }
 };
 function happy(){
   return{
       type : 'HAPPY',
-      payload: '&&*_--_*&&'
+      payload: "&#128512"
   }
 };
 function angry(){
   return{
       type : 'ANGRY',
-      payload: '&&*_==_*&&'
+      payload: "&#128544"
   }
 };
 function confused(){
  
   let faceConfused =  {
       type : 'CONFUSED',
-      payload: '&&**___**&&'
+      payload: "&#128533"
   }
   return faceConfused;
 };
