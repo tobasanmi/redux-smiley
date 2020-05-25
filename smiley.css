@@ -1,0 +1,18 @@
+/* *{
+    margin: 0px;
+    box-sizing: border-box;
+}; */
+
+body{
+    text-align: center;
+    margin-top: 100px;
+
+};
+button{
+    display:inline-block;
+    height: 20px;
+}
+.buttons{
+    margin-top:20px;
+};
+

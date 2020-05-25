@@ -3,19 +3,19 @@ let result = document.getElementById("face");
 
 //const store = createstore(mood);
 //reducer
-function mood(state={}, action){
+function mood(state='', action){
  switch(action.type){
      case 'SAD' :
-         return {...action.payload};
+         return action.payload;
         // return newState;
      case 'HAPPY':
-         return state + action.payload;
+         return action.payload;
          //return newState;
     case 'ANGRY':
-        return state + action.payload;
+        return action.payload;
         //return newState;
     case 'CONFUSED':
-        return state + action.payload;
+        return action.payload;
     default:
         return state
  }
@@ -26,23 +26,23 @@ const store = Redux.createStore(mood);
 function sad(){
     return{
         type : 'SAD',
-        payload: '__--__'
+        payload: "&#128547"
     }
 };
 
 function happy(){
-    console.log('happy');
+    //console.log('happy');
     
     return{
         type : 'HAPPY',
-        payload: '&&*_--_*&&'
+        payload: "&#128512"
     }
 };
 
 function angry(){
     return{
         type : 'ANGRY',
-        payload: '&&*_==_*&&'
+        payload: "&#128544"
     }
 };
 
@@ -50,22 +50,21 @@ function angry(){
  
     let faceConfused =  {
         type : 'CONFUSED',
-        payload: '&&**___**&&'
+        payload: "&#128533"
     }
     return faceConfused;
 };
 
-//document.getElementById('happy').addEventListener('click', store.dispatch(happy()));
-document.getElementById('confused').addEventListener('click', store.dispatch(confused()));
-document.getElementById('sad').addEventListener('click', store.dispatch(sad()));
-document.getElementById('angry').addEventListener('click', store.dispatch(angry()));
+document.getElementById('happy').addEventListener('click',()=>{return store.dispatch(happy())});
+document.getElementById('confused').addEventListener('click',()=>{return store.dispatch(confused())});
+document.getElementById('sad').addEventListener('click', ()=>{return store.dispatch(sad())});
+document.getElementById('angry').addEventListener('click',()=>{return store.dispatch(angry())});
 // function faceConfused(){
 //     document.getElementById("face").innerHTML = store.getState();
 //   }
 
 store.subscribe(() => {
-    console.log(store.getState());
-      result.innerHTML = (store.getState());
+      result.innerHTML = store.getState();
     })
 
 
